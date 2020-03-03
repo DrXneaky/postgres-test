@@ -21,6 +21,7 @@ class User(db.Model):
     def __init__(self, email):
         self.email = email
 
+
 @app.route('/')
 def hello():
     return "<h1>Hello Container World! Postgres works</h1>"
