@@ -5,10 +5,13 @@ services:
     container_name: web_container
     build:
       context: ./web/
+    command: gunicorn --log-level info --log-file=/gunicorn.log --workers 4 --name app -b 0.0.0.0:8000 --reload app.app:app
     expose:
       - "8000"
     depends_on:
       - db
+    env_file:
+      - ./.env.flask
 
   nginx:
     container_name: nginx_container

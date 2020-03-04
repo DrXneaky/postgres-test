@@ -6,3 +6,4 @@ COPY . /
 RUN pip install -r requirements.txt && pip install gunicorn
 
 ENTRYPOINT ["/runserver.sh"]
+
